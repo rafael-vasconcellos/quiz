@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&family=Inter&display=swap');
+
+body {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  margin: 5px;
+}
+
+button {
+  color: white;
+  cursor: pointer;
+}
+
+.quiz {
+  height: 25em;
+  width: 24em;
+  border: solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border-radius: 40px;
+  animation: opacity 1.5s;
+  transition: height 0.5s ease-in-out;
+  padding-bottom: 20px;
+}
+
+.image {
+  width: 100%;
+  min-height: 154px;
+  height: 154px;
+  background-color: #1C1C1C;
+  background-image: url(https://cdn.riddle.com/embeds/v2/images/q_80,f_png,c_fill,w_960,h_540/e61/e611e98b8c4f025fec2b3cef184352f3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-position: center;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.questions {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.asking {
+  position: relative;
+  top: 1em;
+  opacity: 0;
+  animation: display 2.1s 0.15s;
+  animation-fill-mode: forwards;
+
+  font-weight: bold;
+  width: 20em;
+  text-align: center;
+}
+
+.expo {
+  border: 0;
+  margin: 0;
+  position: relative;
+  top: 1em;
+  text-align: center;
+  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+.alternative{
+  background-color: #363636;
+  border: 0px;
+  margin: 7px;
+  height: 3em;
+  width: 20em;
+  position: relative;
+  top: 2em;
+  font-family: 'Inter', sans-serif;
+  opacity: 0;
+  animation: display 2.1s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.4s;
+}
+
+.start {
+  top: 4em;
+  opacity: 0;
+  animation: display 2.1s 0.15s;
+  animation-fill-mode: forwards;
+}
+
+.next {
+  background-color: #363636;
+  border: 0px;
+  position: relative;
+  padding: 5px 10px;
+  text-align: center;
+  margin: 10px 35px;
+  animation: opacity 1.3s;
+}
+
+.score {
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  top: 1em;
+  padding: 5px 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.selected {
+  background-color: red;
+}
+
+.correct {
+  background-color: lime;
+  font-weight: bold;
+  border: 2px solid white;
+  box-sizing: border-box;
+}
+
+
+@keyframes display {
+  from {
+    transform: translateY(5%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes opacity {
+  from {opacity: 35%;}
+  to {opacity: 100%;}
+}
+
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
